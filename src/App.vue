@@ -3,21 +3,21 @@
 
     <v-main>
       <Navbar/>
-      <Home/>
+      <router-view/>
     </v-main>
   </v-app>
-</template>
+</template> 
 
 <script>
-import Home from '@/components/Home';
 import Navbar from '@/components/Navbar'
 
 export default {
   name: 'App',
 
   components: {
-    Home,
-    Navbar
+   
+    Navbar,
+    
   },
 
   data: () => ({
