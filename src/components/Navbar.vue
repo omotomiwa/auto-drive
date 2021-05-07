@@ -17,8 +17,8 @@
       ></v-text-field>
       <v-btn plain right class="hidden-sm-and-down">search</v-btn>
 
-      <router-link to="/Login" style="color: grey">
-              <v-icon right large class="material-icons-round">person</v-icon> <span class="hidden-sm-and-down">LOGIN</span>
+      <router-link to="/Login" style="color: grey" class= "mx-3">
+              <v-icon right large class="material-icons-round">person</v-icon> <span class="hidden-sm-and-down ">LOGIN</span>
       </router-link>
         
       <router-link to="/Cart" style="color:grey">
