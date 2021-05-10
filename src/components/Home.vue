@@ -57,26 +57,41 @@
   </v-card>
       </v-flex>
 
-      <v-flex xs12 md8 >
-         <v-carousel  style="border-radius:4px;" >
+      <v-flex>
+           <b-carousel  style="border-radius:4px;text-shadow: 0px 0px 2px #000 "  class="slides"  xs12 md8 
+   id="carousel-fade"
+    fade
+    indicators>
+    <b-carousel-slide
+      v-for="(item,i) in items"
+      :key="i"
+      :img-src="item.src"
+      class="slides"
+      
+      >
+      </b-carousel-slide>
+  </b-carousel>
+      </v-flex>
+
+      <!-- <v-flex xs12 md8   >
+         <v-carousel  style="border-radius:4px;height= 0 "  class="slides">
     <v-carousel-item
+      class="slides"
       v-for="(item,i) in items"
       :key="i"
       :src="item.src"
       reverse-transition="fade-transition"
-      transition="fade-transition">
+      transition="fade-transition" 
+      style="height: auto"
+      >
       </v-carousel-item>
   </v-carousel>
-      </v-flex>
+      </v-flex> -->
       <v-flex>
                 <v-card
     class="mx-10 hidden-md-and-down"
     width="400"
-    height= "300"
-    
-     
-    
-    >
+    height= "350">
     <v-card-text >
       <h3 class="lg--text text--primary mx-10">
         YOUR N0.1 AUTO SHOP<br><br>
@@ -96,6 +111,11 @@
     </v-layout>
   </v-container>
 
+
+
+
+
+
  
   
   </v-main>
@@ -111,18 +131,32 @@
     name: "Helloworld",
     data () {
       return {
+
+          computed: {
+      height () {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs': return 220
+          case 'sm': return 400
+          case 'md': return 500
+          case 'lg': return 600
+          case 'xl': return 800
+        }
+      },
+    },
+      
         items: [
-          {
-            src: 'https://images.pexels.com/photos/5213531/pexels-photo-5213531.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+          {   src: 'https://images.pexels.com/photos/6335848/pexels-photo-6335848.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+        
           },
           {
             src: 'https://images.pexels.com/photos/4038045/pexels-photo-4038045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
           },
           {
-            src: 'https://images.pexels.com/photos/6335848/pexels-photo-6335848.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+            src: "https://media.ed.edmunds-media.com/mercedes-benz/c-class/2019/oem/2019_mercedes-benz_c-class_sedan_c-300_fq_oem_1_815.jpg",
+            
           },
-          {
-            src: 'https://images.pexels.com/photos/7744382/pexels-photo-7744382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+          { src: "https://media.ed.edmunds-media.com/land-rover/range-rover-sport/2020/oem/2020_land-rover_range-rover-sport_4dr-suv_p525-autobiography_fq_oem_2_815.jpg",
+
           },
         ],
 
@@ -178,6 +212,11 @@
   p{
     color:red;
     margin-top: 0;
+  }
+  .slides{
+       width: 770px;
+       height: 500px;
+    
   }
 
 </style>
