@@ -4,12 +4,14 @@
     <v-main>
       <Navbar/>
       <router-view/>
+      <Footer class="footer"/>
     </v-main>
   </v-app>
 </template> 
 
 <script>
 import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 export default {
   name: 'App',
@@ -17,6 +19,7 @@ export default {
   components: {
    
     Navbar,
+    Footer
     
   },
 
@@ -25,3 +28,6 @@ export default {
   }),
 };
 </script>
+<style>
+a { text-decoration: none; };
+</style>

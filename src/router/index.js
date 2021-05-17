@@ -6,6 +6,7 @@ import Cart from '../components/Cart.vue'
 import Account from '../components/Account.vue'
 
 
+
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
@@ -41,6 +42,7 @@ const routes = [
     name: 'Account',
     component:Account
   },
+  
   
 ]
 

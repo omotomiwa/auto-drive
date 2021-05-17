@@ -1,12 +1,12 @@
 <template>
 <div>
   <nav>
-    <v-app-bar app>
+    <v-app-bar app clipped-left>
       <v-toolbar-title class="dark--text">
         <router-link to="/" style="color: grey">
-              <span class="font-weight-light">AUTO</span>
+              <span class="font-weight-light text-decoration-none">AUTO</span>
         </router-link>
-        <router-link to="/" style="color:black"><span><b>DRIVE</b></span></router-link>
+        <router-link to="/" style="color:black"><span class="text-decoration-none"><b>DRIVE</b></span></router-link>
         
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -40,18 +40,6 @@
       <!-- hidden-md-and-up -->
 
     </v-app-bar>
-     <v-toolbar flat app>
-  
-     <v-text-field 
-        class="hidden-md-and-up"
-          width="50"
-          label="Search Gallery..."
-          >
-          </v-text-field>
-          <span><v-btn plain 
-          class="hidden-md-and-up"
-          >search</v-btn></span>
-  </v-toolbar>
 
     <v-navigation-drawer v-model="drawer" app class="grey darken-4">
       <v-list-item>

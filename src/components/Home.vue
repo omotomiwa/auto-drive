@@ -1,7 +1,7 @@
 <template>
  
 <v-main>
-  <v-text-field 
+  <!-- <v-text-field 
         class="hidden-md-and-up"
           width="50"
           label="Search Gallery..."
@@ -9,7 +9,7 @@
           </v-text-field>
           <span><v-btn plain 
           class="hidden-md-and-up"
-          >search</v-btn></span>
+          >search</v-btn></span> -->
 
   <v-container  class="mx-0">
     <v-layout >
@@ -79,7 +79,9 @@
       transition="fade-transition" 
       
       >
+       <v-list-item-title class="d-flex flex-column justify-end align-left fill-height white--text "><h4>Shop Now</h4></v-list-item-title>
       </v-carousel-item>
+     
   </v-carousel>
       </v-flex>
       <v-flex>
@@ -207,7 +209,7 @@
           { Name: "Mercedes", model:"C300", year:"2019", image:"https://media.ed.edmunds-media.com/mercedes-benz/c-class/2019/oem/2019_mercedes-benz_c-class_sedan_c-300_fq_oem_1_815.jpg", price: "32,500" },
           { Name: "Jaguar", model:"XE-P300", year:"2020", image:"https://media.ed.edmunds-media.com/jaguar/xe/2020/oem/2020_jaguar_xe_sedan_s_fq_oem_1_1600.jpg", price: "47,290"},
           { Name: "BMW", model:"750i", year:"2020", image:"https://www.cnet.com/a/img/ghsbIRPZlbUUoh7Vte-0gwh2zA8=/1200x675/2019/04/02/faf2e652-4d9d-4c8e-93ee-b9fd1c39f898/2020-bmw-750li-xdrive-1.jpg", price: "94,445"}, 
-          { Name: "Audi", model:"RS7", year:"2020", image:"https://www.carscoops.com/wp-content/uploads/2019/09/d10e16d2-2020-audi-rs7-00-1024x555.jpg", price: "120,000"}, 
+          { Name: "Audi", model:"RS7", year:"2020", image:"https://www.slashgear.com/wp-content/uploads/2019/09/RS7_0000015-1280x720.jpg", price: "120,000"}, 
           { Name: "Range Rover", model:"Velar", year:"2021", image:"https://m.media-amazon.com/images/I/412WMvLC6bL.jpg", price: "56,900"}, 
           { Name: "Porshe", model:"Panamera", year:"2019", image:"https://di-uploads-pod15.dealerinspire.com/porscheofneworleans/uploads/2019/01/mlp-01.png", price: "127,960"}, 
           { Name: "Mercedes", model:"G Wagon", year:"2020", image:"https://www.cnet.com/a/img/on1lXEG-_fTUTtpd0Xpx06eZ60U=/1200x675/2020/10/07/8aa56ed8-69ff-4b50-ae8e-b4cf7dde2189/2020-mercedes-amg-g63-001.jpg", price: "130,900" },
@@ -217,7 +219,7 @@
           { Name: "Range Rover", model:"Evogue", year:"2021", image:"https://www.motortrend.com/uploads/sites/5/2020/11/2021-Range-Rover-Evoque-12.jpg?fit=around%7C480:270", price: "44,350"}, 
           { Name: "Porshe", model:"Cayenne", year:"2018", image:"https://blog.dupontregistry.com/wp-content/uploads/2017/08/New-Cayenne-Feature.jpg", price: "66,800"},
           { Name: "Mercedes", model:"S550", year:"2021", image:"https://cdn.carbuzz.com/gallery-images/2021-mercedes-benz-s-class-sedan-rear-angle-view-carbuzz-749558.jpg", price: "109,800" },
-          { Name: "Jaguar", model:"F-Pace", year:"2021", image:"https://www.carscoops.com/wp-content/uploads/2020/08/2021-lister-stealth-jaguar-f-pace-svr-0.jpg", price: "51,145"},
+          { Name: "Jaguar", model:"F-Pace", year:"2021", image:"https://www.cnet.com/a/img/4DDWh5oO3I3PVBrw1NTiH8rBf9k=/2020/12/01/f13c8385-46d9-4eb2-8730-f47a5dc43547/2021-jaguar-f-pace-svr-113-ogi.jpg", price: "51,145"},
           { Name: "BMW", model:"X6", year:"2019", image:"https://media.ed.edmunds-media.com/bmw/x6/2018/oem/2018_bmw_x6_4dr-suv_xdrive50i_fq_oem_10_500.jpg", price: "42,999"}, 
           { Name: "Audi", model:"S8", year:"2020", image:"https://cimg2.ibsrv.net/ibimg/hgm/1920x1080-1/100/706/audi-s8_100706826.jpg", price: "148,045"}, 
           { Name: "Range Rover", model:"Sport", year:"2020", image:"https://media.ed.edmunds-media.com/land-rover/range-rover-sport/2020/oem/2020_land-rover_range-rover-sport_4dr-suv_p525-autobiography_fq_oem_2_815.jpg", price: "114,500"}, 
