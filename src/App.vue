@@ -4,7 +4,7 @@
     <v-main>
       <Navbar/>
       <router-view/>
-      <Footer class="footer"/>
+      <Footer/>
     </v-main>
   </v-app>
 </template> 

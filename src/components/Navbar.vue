@@ -3,10 +3,10 @@
   <nav>
     <v-app-bar app clipped-left>
       <v-toolbar-title class="dark--text">
-        <router-link to="/" style="color: grey">
+        <router-link to="/" style="color: grey;text-decoration: none;">
               <span class="font-weight-light text-decoration-none">AUTO</span>
         </router-link>
-        <router-link to="/" style="color:black"><span class="text-decoration-none"><b>DRIVE</b></span></router-link>
+        <router-link to="/" style="color:black; text-decoration: none;"><span><b>DRIVE</b></span></router-link>
         
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -17,11 +17,11 @@
       ></v-text-field>
       <v-btn plain right class="hidden-sm-and-down">search</v-btn>
 
-      <router-link to="/Login" style="color: grey">
+      <router-link to="/Login" style="color: grey; text-decoration: none;">
               <v-icon right size="26"  class="material-icons-round">person</v-icon> <span class="hidden-sm-and-down ">LOGIN</span>
       </router-link>
         
-      <router-link to="/Cart" style="color:grey">
+      <router-link to="/Cart" style="color:grey; text-decoration: none;">
               <v-tab>
         <v-badge right color="black accent-7"  content="0" overlap>
           <v-icon size="26" right>shopping_cart</v-icon>
@@ -34,10 +34,9 @@
         medium
         right
         @click="drawer = !drawer"
-        class=" material-icons-round"
+        class=" material-icons-round hidden-md-and-up"
         >menu</v-icon
       >
-      <!-- hidden-md-and-up -->
 
     </v-app-bar>
 

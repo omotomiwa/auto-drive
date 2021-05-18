@@ -6,7 +6,7 @@
   >
  
 
-    <v-card-title class="justify-center black--text">Login</v-card-title>
+    <v-card-title class="justify-center black--text">CREATE ACCOUNT</v-card-title>
 
     <v-card-text>
        <validation-observer
@@ -14,6 +14,42 @@
     v-slot="{ invalid }"
   >
     <form @submit.prevent="submit">
+         <validation-provider
+        name="Name"
+         :rules="{required:true}"
+          v-slot="{ errors }"
+          required
+        
+
+      >
+        <v-text-field
+          v-model="name"
+          label="Username"
+           :error-messages="errors"
+           required
+
+          
+          
+        ></v-text-field>
+      </validation-provider>
+
+       <validation-provider
+        v-slot="{ errors }"
+        name="Phone Number"
+        :rules="{required:true}"
+      >
+        <v-text-field
+          v-model="phoneNumber"
+          :counter="11"
+          :error-messages="errors"
+          label="Phone Number"
+          
+          
+       
+          
+        ></v-text-field>
+      </validation-provider>
+
        <validation-provider
         v-slot="{ errors }"
         name="email"
@@ -30,6 +66,7 @@
       <validation-provider
         v-slot="{ errors }"
         name="password"
+       
         
       >
         <v-text-field
@@ -38,6 +75,21 @@
           label="Password"
         ></v-text-field>
       </validation-provider>
+
+       <validation-provider
+        v-slot="{ errors }"
+        name="password"
+       
+        
+      >
+        <v-text-field
+          v-model="password"
+          :error-messages="errors"
+          label="Retype Password"
+        ></v-text-field>
+      </validation-provider>
+     
+
      
 
       <v-btn
@@ -46,14 +98,14 @@
         :disabled="invalid"
         @click="clear"
       >
-        Login
+        Signup
       </v-btn>
 
     </form>
   </validation-observer><br><br>
 
 
-      <div>Don`t have an account? <router-link to="/Signup" style="color:blue; text-decoration: none;">Sign up</router-link> here!
+      <div>Already have an account? <router-link to="/Login" style="color:blue; text-decoration: none;">Login</router-link> here!
      </div>
     </v-card-text>
    
@@ -69,6 +121,7 @@
 
 </v-container>
 </template>
+
 
 <script>
   import { required, digits, email, max, regex } from 'vee-validate/dist/rules'
@@ -108,8 +161,10 @@
     },
     data: () => ({
       name: '',
+      phoneNumber: '',
+      email: '',
       password: '',
-      email: ''
+      confirmPassword:""
      
       
     }),
@@ -120,7 +175,9 @@
       },
       clear () {
         this.password = '',
-        this.email = ''
+        this.email = '',
+        this.name = "",
+        this.phoneNumber= ""
         this.$refs.observer.reset()
       },
     },

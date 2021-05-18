@@ -79,7 +79,7 @@
       transition="fade-transition" 
       
       >
-       <v-list-item-title class="d-flex flex-column justify-end align-left fill-height white--text "><h4>Shop Now</h4></v-list-item-title>
+       <v-list-item-title   class="d-flex flex-column justify-end align-left fill-height white--text "><h4>Shop Now</h4></v-list-item-title>
       </v-carousel-item>
      
   </v-carousel>
@@ -112,7 +112,7 @@
 
   
     
- <v-layout  row wrap>
+ <v-layout  row wrap class="my-5">
    <v-flex  v-for="(cars, j) in gallery" :key =j xs12 md6  lg4>
       <v-card
     

@@ -4,6 +4,8 @@ import Home from '../components/Home.vue'
 import Login from '../components/Login.vue'
 import Cart from '../components/Cart.vue'
 import Account from '../components/Account.vue'
+import Contact from '../components/Contact.vue'
+import Signup from '../components/Signup.vue'
 
 
 
@@ -42,6 +44,17 @@ const routes = [
     name: 'Account',
     component:Account
   },
+  {
+    path:'/Contact',
+    name: 'Contact',
+    component:Contact
+  },
+  {
+    path:'/Signup',
+    name: 'Signup',
+    component: Signup
+  },
+
   
   
 ]
