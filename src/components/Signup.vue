@@ -12,45 +12,16 @@
        <validation-observer
     ref="observer"
     v-slot="{ invalid }"
+    
   >
     <form @submit.prevent="submit">
-         <validation-provider
-        name="Name"
-         :rules="{required:true}"
-          v-slot="{ errors }"
-          required
-        
 
-      >
         <v-text-field
-          v-model="name"
+        v-model="name"
           label="Username"
-           :error-messages="errors"
-           required
-
-          
-          
         ></v-text-field>
-      </validation-provider>
 
-       <validation-provider
-        v-slot="{ errors }"
-        name="Phone Number"
-        :rules="{required:true}"
-      >
-        <v-text-field
-          v-model="phoneNumber"
-          :counter="11"
-          :error-messages="errors"
-          label="Phone Number"
-          
-          
-       
-          
-        ></v-text-field>
-      </validation-provider>
-
-       <validation-provider
+           <validation-provider
         v-slot="{ errors }"
         name="email"
         rules="email"
@@ -62,10 +33,10 @@
         ></v-text-field>
       </validation-provider>
 
-
       <validation-provider
         v-slot="{ errors }"
         name="password"
+        
        
         
       >
@@ -73,6 +44,9 @@
           v-model="password"
           :error-messages="errors"
           label="Password"
+          
+          
+          
         ></v-text-field>
       </validation-provider>
 
@@ -85,7 +59,8 @@
         <v-text-field
           v-model="password"
           :error-messages="errors"
-          label="Retype Password"
+          label="Confirm Password"
+          
         ></v-text-field>
       </validation-provider>
      
@@ -95,6 +70,7 @@
       <v-btn
         class="mr-4"
         type="submit"
+        
         :disabled="invalid"
         @click="clear"
       >
