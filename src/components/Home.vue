@@ -266,7 +266,7 @@
           { Name: "Range Rover", model:"Discovery", year:"2020", image:"https://www.ccarprice.com/products/Land_Rover_Discovery_Sport_S_R-Dynamic_4WD_2020.jpg", price: "52,300"}, 
           { Name: "Porsche", model:"911", year:"2021", image:"http://images.summitmedia-digital.com/topgear/images/2020/04/11/2020-porsche-911-turbo-s-05-1586596091.jpg", price: "99,200"},
         ]
-      }
+      } 
     },
   }
 </script>
