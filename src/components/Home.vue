@@ -1,8 +1,9 @@
 <template>
  
 <v-main>
-  <v-text-field 
-        class="hidden-md-and-up"
+  <v-container class="mx-0">
+     <v-text-field 
+         class="hidden-md-and-up"
           width="50"
           label="Search Gallery..."
           >
@@ -11,7 +12,11 @@
           class="hidden-md-and-up"
           >search</v-btn></span>
 
+  </v-container>
+   
+
   <v-container  class="mx-0">
+    
     <v-layout >
       <v-flex >
                 <v-card 
@@ -111,9 +116,12 @@
 
 
   
-    
+ <v-container class="mx-0 ">
+   <h5 class="mx-6 check">Check out deals of the day!</h5>
+   </v-container> 
  <v-layout  row wrap class="my-5">
    <v-flex  v-for="(cars, j) in gallery" :key =j xs12 md6  lg4>
+     
       <v-card
     
 
@@ -257,5 +265,9 @@
   .slides{
     background-size: cover;
   background-position: center;
+  }
+  .check{
+    position: relative;
+    top: 50px;
   }
 </style>

@@ -3,7 +3,7 @@
     <v-footer absolute dark padless class="footer ">
         <v-container class="text-center ">
             <v-layout row wrap>
-                <v-flex><b>Developed By:</b> Chris</v-flex>
+                <v-flex><b>Developer:</b> Chris</v-flex>
                 <router-link to="/Contact" class="contact" style="text-decoration: none; color:white">
                     <v-flex class="contact">Contact</v-flex>
                 </router-link>

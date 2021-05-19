@@ -38,7 +38,7 @@
         medium
         right
         @click="drawer = !drawer"
-        class=" material-icons-round hidden-md-and-up"
+        class=" material-icons-round hidden-md-and-up mx-2"
         >menu</v-icon
       >
 
