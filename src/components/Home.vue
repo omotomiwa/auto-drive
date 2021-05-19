@@ -1,7 +1,7 @@
 <template>
  
 <v-main>
-  <!-- <v-text-field 
+  <v-text-field 
         class="hidden-md-and-up"
           width="50"
           label="Search Gallery..."
@@ -9,7 +9,7 @@
           </v-text-field>
           <span><v-btn plain 
           class="hidden-md-and-up"
-          >search</v-btn></span> -->
+          >search</v-btn></span>
 
   <v-container  class="mx-0">
     <v-layout >

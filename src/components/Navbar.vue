@@ -17,16 +17,20 @@
       ></v-text-field>
       <v-btn plain right class="hidden-sm-and-down">search</v-btn>
 
-      <router-link to="/Login" style="color: grey; text-decoration: none;">
-              <v-icon right size="26"  class="material-icons-round">person</v-icon> <span class="hidden-sm-and-down ">LOGIN</span>
+      <router-link to="/Login" style="color: grey; text-decoration: none;" class="mx-2">
+              <v-icon right size="26"  class="material-icons-round">person</v-icon> <span class="hidden-sm-and-down">LOGIN</span>
       </router-link>
         
-      <router-link to="/Cart" style="color:grey; text-decoration: none;">
+      <router-link to="/Cart" style="color:grey; text-decoration: none;" class="mx-2">
               <v-tab>
         <v-badge right color="black accent-7"  content="0" overlap>
           <v-icon size="26" right>shopping_cart</v-icon>
         </v-badge>
       </v-tab>
+      </router-link>
+
+      <router-link to="/Account" style="color: grey; text-decoration: none;" class="mx-2">
+              <v-icon right size="26"  class="material-icons-round hidden-sm-and-down ">account_box</v-icon> <span class="hidden-sm-and-down ">Account</span>
       </router-link>
       
 
