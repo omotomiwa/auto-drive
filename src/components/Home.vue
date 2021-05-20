@@ -156,6 +156,7 @@
       <v-btn
         color="orange"
         text
+        v-on:click="addItemToCart(cars)"
       >
         ADD TO CART
       </v-btn>
@@ -186,19 +187,8 @@
     data () {
       
       return {
-        
-          computed: {
-      height () {
-        switch (this.$vuetify.breakpoint.name) {
-          case 'xs': return 220
-          case 'sm': return 400
-          case 'md': return 500
-          case 'lg': return 600
-          case 'xl': return 800
-        }
-      },
-    },
-      
+        cart:[],
+       
         items: [
           {   src: 'https://images.pexels.com/photos/6335848/pexels-photo-6335848.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
         
@@ -267,7 +257,15 @@
           { Name: "Porsche", model:"911", year:"2021", image:"http://images.summitmedia-digital.com/topgear/images/2020/04/11/2020-porsche-911-turbo-s-05-1586596091.jpg", price: "99,200"},
         ]
       } 
+
     },
+    methods:{
+      addItemToCart(cars){
+        this.cart.push(cars)
+        console.log(this.cart)
+      }
+    }
+    
   }
 </script>
 
