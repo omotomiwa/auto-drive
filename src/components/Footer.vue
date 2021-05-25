@@ -3,7 +3,7 @@
     <v-footer absolute dark padless class="footer ">
         <v-container class="text-center ">
             <v-layout row wrap>
-                <v-flex><b>Developer:</b> Chris</v-flex>
+                <v-flex><b>Developer:</b> {{username}}</v-flex>
                 <router-link to="/Contact" class="contact" style="text-decoration: none; color:white">
                     <v-flex class="contact">Contact</v-flex>
                 </router-link>
@@ -15,6 +15,23 @@
 </v-container>
 
 </template>
+<script>
+import { mapState } from 'vuex'
+export default {
+  name: 'Footer',
+  computed: {
+    ...mapState(["username"])
+  },
+  data() {
+    return {
+      message: ""
+    }
+  },
+  methods: {
+    
+  }
+}
+</script>
 <style>
 .footer{
     height: 70px;

@@ -2,7 +2,7 @@
  
 <v-container>
    <v-card
-    class="mx-auto my-12"
+    class="mx-auto my-12 emptyCart"
     max-width="374"
   >
  <v-icon right class="material-icons-outlined cart grey--text"  size="150" justify="center">shopping_cart
@@ -24,6 +24,9 @@
 
     </router-link>
     <v-divider class="mx-4"></v-divider>
+    <p  v-for="(carts,i) in cart"
+      :key="i"
+      >{{carts.Name}}</p>
 
 
    
@@ -32,6 +35,7 @@
       
     </v-card-actions>
   </v-card>
+ 
 
 </v-container>
 
@@ -41,3 +45,33 @@
   margin-left: 100px;
 }
 </style>
+<script>
+import { mapState } from 'vuex'
+export default{
+    name: "Cart",
+  computed:{
+        ...mapState([
+            "cart",
+            
+        ]),
+       
+    },
+    methods:{
+      //let empty =  document.querySelector(".emptyCart");
+
+      created: function() {
+  window.addEventListener('load',alert("hello"));
+},
+
+
+            
+
+    },
+    data(){
+        return{
+        // cart:[]
+        }
+    },
+    
+}
+</script>

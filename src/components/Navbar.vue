@@ -23,7 +23,7 @@
         
       <router-link to="/Cart" style="color:grey; text-decoration: none;" class="mx-2">
               <v-tab>
-        <v-badge right color="black accent-7"  content="0" overlap>
+        <v-badge right color="black accent-7"  :content="cart.length" overlap>
           <v-icon size="26" right>shopping_cart</v-icon>
         </v-badge>
       </v-tab>
@@ -66,13 +66,14 @@
           :key="link.text"
           router :to="link.route"
           link
+          style="text-decoration: none;"
         >
-          <v-list-item-icon >
-            <v-icon class="mx-1 white--text">{{ link.icon }}</v-icon>
+          <v-list-item-icon style=" text-decoration: none;">
+            <v-icon class="mx-1 white--text" style="color: white; text-decoration: none;">{{ link.icon }}</v-icon>
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title class=" white--text">{{ link.text }}</v-list-item-title>
+            <v-list-item-title class=" white--text" style="color: white; text-decoration: none;">{{ link.text }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -85,16 +86,27 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
+   computed: {
+      ...mapState([
+        "links",
+        "cart"
+      ]),
+     
+  },
+  methods:{
+         //...mapMutations(["addItemToCart"])
+         
+  },
   data() {
     return {
       drawer: false,
-      cart:[],
-      links: [
-        { icon: "home", text: "Home", route: "/" },
-        { icon: "account_box", text: "Account", route: "/Account" },
-        { icon: "person", text: "Login", route: "/Login" },
-      ],
+      // links: [
+      //   { icon: "home", text: "Home", route: "/" },
+      //   { icon: "account_box", text: "Account", route: "/Account" },
+      //   { icon: "person", text: "Login", route: "/Login" },
+      // ],
     };
   },
 };
