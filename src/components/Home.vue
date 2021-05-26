@@ -212,7 +212,7 @@ import { mapState } from 'vuex'
   
 </script>
 
-<style>
+<style scoped>
   p{
     color:red;
     margin-top: 0;
