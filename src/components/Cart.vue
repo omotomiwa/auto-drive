@@ -4,6 +4,7 @@
    <v-card
     class="mx-auto my-12 emptyCart"
     max-width="374"
+    v-if="cart.length === 0"
   >
  <v-icon right class="material-icons-outlined cart grey--text"  size="150" justify="center">shopping_cart
     </v-icon>  
@@ -24,25 +25,88 @@
 
     </router-link>
     <v-divider class="mx-4"></v-divider>
-    <p  v-for="(carts,i) in cart"
-      :key="i"
-      >{{carts.Name}}</p>
-
-
-   
-
-    <v-card-actions>
-      
-    </v-card-actions>
   </v-card>
- 
-
 </v-container>
+
+  
+  <v-container>
+   <v-card
+    class="mx-auto my-4"
+    max-width="344"
+    height="415"
+    v-else
+     v-for="(cars, k) in cart" :key =k xs12 md6  lg4
+    
+    
+  >
+    <v-card-text>
+     <p class="display-1 text--primary">
+        {{cars.Name}}
+      </p>
+       <v-img
+      class="white--text align-end"
+      height="200px"
+      :src="cars.image"
+    >
+
+    </v-img><br>
+     
+      <div class="text--primary">
+        Model: {{cars.model}}
+      </div>
+      <div class="text--primary">
+        Year: {{cars.year}}
+      </div>
+     
+      <div class="price">
+       <div class="text--primary">
+        Price: ${{cars.price}}
+      </div>
+
+     <div class="text--primary quantity">
+        <span  class="material-icons"  style="font-size:17px;">arrow_back_ios</span>
+        <span class="counter">1</span>
+ <span class="material-icons"  style="font-size:17px;">
+arrow_forward_ios
+</span>
+      </div>
+    </div>
+    </v-card-text>
+     <v-btn
+        color="orange"
+        text
+      >
+        Remove
+      </v-btn>
+
+  </v-card>
+        <!-- <h4 class="cartTotal">Total:</h4> -->
+        </v-container>
+
+
+
+
+
 
 </template>
 <style>
 .cart{
   margin-left: 100px;
+}
+.quantity{
+  float: right;
+}
+.price{
+  display:inline;
+}
+
+.cartTotal{
+  text-align: center;
+  
+
+}
+.counter{
+  font-size: 19px;
 }
 </style>
 <script>

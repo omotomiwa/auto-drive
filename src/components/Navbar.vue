@@ -22,7 +22,7 @@
       </router-link>
         
       <router-link to="/Cart" style="color:grey; text-decoration: none;" class="mx-2">
-              <v-tab>
+              <v-tab >
         <v-badge right color="black accent-7"  :content="cart.length" overlap>
           <v-icon size="26" right>shopping_cart</v-icon>
         </v-badge>
