@@ -26,14 +26,10 @@
     </router-link>
     <v-divider class="mx-4"></v-divider>
   </v-card>
-</v-container>
 
-  
-  <v-container>
    <v-card
     class="mx-auto my-4"
     max-width="344"
-    height="415"
     v-else
      v-for="(cars, k) in cart" :key =k xs12 md6  lg4
     
@@ -80,7 +76,9 @@ arrow_forward_ios
       </v-btn>
 
   </v-card>
-        <!-- <h4 class="cartTotal">Total:</h4> -->
+  
+        <h4 class="cartTotal">Total:</h4>
+       
         </v-container>
 
 
