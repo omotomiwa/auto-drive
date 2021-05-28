@@ -60,9 +60,9 @@
       </div>
 
      <div class="text--primary quantity">
-        <span  class="material-icons"  style="font-size:17px;">arrow_back_ios</span>
-        <span class="counter">1</span>
- <span class="material-icons"  style="font-size:17px;">
+        <span  class="material-icons increase arrow"   style="font-size:17px;">arrow_back_ios</span>
+        <span class="counter" value="1">1</span>
+ <span class="material-icons decrease arrow" v-on:click="increaseItem()"  value="Increase Value" style="font-size:17px;">
 arrow_forward_ios
 </span>
       </div>
@@ -76,10 +76,26 @@ arrow_forward_ios
       </v-btn>
 
   </v-card>
+  <v-container>
+    <h4 class="cartTotal">Total:</h4>
+  </v-container>
+
+   <v-container>
+   <div class="wrapper">
+    <v-btn depressed class="checkout" color="orange">Checkout</v-btn>
+   
+   </div>
+    
+  </v-container>
   
-        <h4 class="cartTotal">Total:</h4>
+  
+
        
         </v-container>
+        
+         
+        
+       
 
 
 
@@ -100,11 +116,26 @@ arrow_forward_ios
 
 .cartTotal{
   text-align: center;
+   position: relative;
+  bottom: 15px;
   
 
 }
+.arrow{
+  cursor: pointer;
+}
 .counter{
   font-size: 19px;
+  position: relative;
+  bottom: 3px;
+}
+.wrapper{
+  text-align: center;
+}
+.checkout{
+   position: relative;
+  bottom: 27px;
+
 }
 </style>
 <script>
@@ -118,17 +149,24 @@ export default{
         ]),
        
     },
-    methods:{
-      //let empty =  document.querySelector(".emptyCart");
 
-      created: function() {
-  window.addEventListener('load',alert("hello"));
-},
+     methods: {
+    increaseItem() {
+       var value = parseInt(document.querySelector('.counter').value, 10);
+  value = isNaN(value) ? 1 : value;
+  value++;   
+  document.querySelector(".counter").innerHTML = value;
+}
+     
+      
+      
+    }, 
+  
+
 
 
             
 
-    },
     data(){
         return{
         // cart:[]
