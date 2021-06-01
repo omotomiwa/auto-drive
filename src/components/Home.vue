@@ -194,10 +194,9 @@ import { mapState } from 'vuex'
        
     },
     methods:{
-             //...mapMutations([ "addItemToCart"]),
+            
              addItemToCart(cars){
                this.cart.push(cars)
-               console.log(this.cart)
              }
 
     },

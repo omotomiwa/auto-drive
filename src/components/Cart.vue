@@ -59,10 +59,10 @@
         Price: ${{cars.price}}
       </div>
 
-     <div class="text--primary quantity">
-        <span  class="material-icons increase arrow"   style="font-size:17px;">arrow_back_ios</span>
-        <span class="counter" value="1">1</span>
- <span class="material-icons decrease arrow" v-on:click="increaseItem()"  value="Increase Value" style="font-size:17px;">
+     <div class="text--primary quantity" >
+        <span  class="material-icons decrease arrow" v-on:click= "remove(cars)"  style="font-size:17px;">arrow_back_ios</span>
+        <span><input type="number" class="counter"  :value="cars.quantity"/></span>
+ <span class="material-icons increase arrow" v-on:click= "add(cars)" style="font-size:17px;">
 arrow_forward_ios
 </span>
       </div>
@@ -76,13 +76,13 @@ arrow_forward_ios
       </v-btn>
 
   </v-card>
-  <v-container>
+  <v-container v-show="cart.length != 0 ">
     <h4 class="cartTotal">Total:</h4>
   </v-container>
 
    <v-container>
    <div class="wrapper">
-    <v-btn depressed class="checkout" color="orange">Checkout</v-btn>
+    <v-btn v-show="cart.length != 0 " depressed class="checkout" color="orange">Checkout</v-btn>
    
    </div>
     
@@ -128,6 +128,12 @@ arrow_forward_ios
   font-size: 19px;
   position: relative;
   bottom: 3px;
+  width: 12px;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 .wrapper{
   text-align: center;
@@ -138,6 +144,8 @@ arrow_forward_ios
 
 }
 </style>
+
+
 <script>
 import { mapState } from 'vuex'
 export default{
@@ -150,13 +158,22 @@ export default{
        
     },
 
+    
+
      methods: {
-    increaseItem() {
-       var value = parseInt(document.querySelector('.counter').value, 10);
-  value = isNaN(value) ? 1 : value;
-  value++;   
-  document.querySelector(".counter").innerHTML = value;
-}
+        add(cars) {
+      cars.quantity++;
+    },
+
+     remove(cars) {
+      cars.quantity--;
+    },
+     
+   
+      
+
+    
+
      
       
       
@@ -167,10 +184,11 @@ export default{
 
             
 
-    data(){
-        return{
-        // cart:[]
-        }
+     data(){
+        return {
+           
+            
+        }        
     },
     
 }
