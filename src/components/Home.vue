@@ -118,14 +118,14 @@
   
  <v-container class="mx-0 ">
    <h5 class="mx-6 check">Check out deals of the day!</h5>
-   </v-container> 
- <v-layout  row wrap class="my-5">
+   </v-container>  
+  <v-layout  row wrap class="my-5">
    <v-flex  v-for="(cars, j) in gallery" :key =j xs12 md6  lg4>
      
       <v-card
     
 
-    class="mx-14 my-10"
+    class="mx-8 my-10"
     max-width="370"
    
    
@@ -139,18 +139,17 @@
       
     </v-img>
     <v-card-title >{{cars.Name}}</v-card-title>
-
-    <v-card-subtitle class="pb-0" >
-      Model: {{cars.model}}
+      <v-card-subtitle class="pb-0 model">
+      Model:{{cars.model}}
     </v-card-subtitle>
+     <v-card-text class="text--primary">
 
-    <v-card-text class="pb-0"  >
-      <div>Year: {{cars.year}}</div>
+      <div>Price: <b class=" priceTag">$ {{cars.price}}</b></div>
     </v-card-text>
-
-    <v-card-text class="text--primary">
-      <div>Price: ${{cars.price}}</div>
-    </v-card-text>
+    <div class="year">Year: {{cars.year}}</div>
+    
+    
+    
 
     <v-card-actions>
       <v-btn
@@ -165,7 +164,7 @@
      
 
    </v-flex>
- </v-layout>
+ </v-layout> 
 
  
 
@@ -225,4 +224,15 @@ import { mapState } from 'vuex'
     position: relative;
     top: 50px;
   }
-</style>
+ .model{
+   float: left;
+ }
+ .year{
+   position: relative;
+   left: 39px;
+ }
+ .priceTag{
+   font-size: 17px;
+ }
+ 
+    </style>

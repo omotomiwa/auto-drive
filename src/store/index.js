@@ -57,7 +57,7 @@ export default new Vuex.Store({
 
 
           {quantity: 1, Name: "Mercedes", model:"GLE 450", year:"2021", image:"https://media.ed.edmunds-media.com/mercedes-benz/gle-class-coupe/2021/oem/2021_mercedes-benz_gle-class-coupe_4dr-suv_amg-gle-53_fq_oem_1_1600.jpg", price: 76500 },
-          {quantity: 1, Name: "Jaguar", model:"XJ", year:"2019", image:"https://i.ytimg.com/vi/fI5boW0PAps/maxresdefault.jpg", price: "75,700"},
+          {quantity: 1, Name: "Jaguar", model:"XJ", year:"2019", image:"https://i.ytimg.com/vi/fI5boW0PAps/maxresdefault.jpg", price: "75700"},
           {quantity: 1, Name: "BMW", model:"X3", year:"2020", image:"https://www.motortrend.com/uploads/sites/5/2019/11/2020-BMW-X3M-Competition-front-three-quarter-in-motion-1.jpg?fit=around%7C875:492.1875", price: 43500}, 
           {quantity: 1, Name: "Audi", model:"RS3", year:"2019", image:"https://s1.cdn.autoevolution.com/images/gallery/AUDI-RS3-Sedan-5817_6.jpg", price: 56200}, 
           {quantity: 1, Name: "Range Rover", model:"Autobiography", year:"2021", image:"https://mediacloud.carbuyer.co.uk/image/private/s--Tz6aGUgA--/v1579627451/carbuyer/range-rover-autobiography.jpg", price: 152500}, 
