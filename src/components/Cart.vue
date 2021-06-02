@@ -71,13 +71,18 @@ arrow_forward_ios
      <v-btn
         color="orange"
         text
+          v-on:click="removeFromCart(cars)" 
       >
         Remove
       </v-btn>
 
   </v-card>
   <v-container v-show="cart.length != 0 ">
-    <h4 class="cartTotal">Total:</h4>
+  <div class = "wrap">
+   <span class="cartTotal">Total: </span><span class="amount">$ {{sum.toFixed(2).replace(/(^\d{1,3}|\d{3})(?=(?:\d{3})+(?:$|\.))/g, '$1,')}}</span>
+  
+  </div>
+   
   </v-container>
 
    <v-container>
@@ -113,12 +118,23 @@ arrow_forward_ios
 .price{
   display:inline;
 }
-
+.wrap{
+  text-align: center;
+}
 .cartTotal{
   text-align: center;
    position: relative;
   bottom: 15px;
+  font-size: 20px;
+  font-weight: 700;
   
+
+}
+.amount{
+  text-align: center;
+   position: relative;
+  bottom: 15px;
+  font-weight: 500;
 
 }
 .arrow{
@@ -155,8 +171,14 @@ export default{
             "cart",
             
         ]),
-       
-    },
+         sum(){
+  let total = 0;
+  this.cart.forEach((cars) => {
+       total += parseFloat( cars.price * cars.quantity);
+  });
+  return total;
+ }
+  },
 
     
 
@@ -169,8 +191,11 @@ export default{
       cars.quantity--;
     },
      
+
+      removeFromCart(cars) {
+      this.cart.splice(this.cart.indexOf(cars),1);
    
-      
+      } 
 
     
 
