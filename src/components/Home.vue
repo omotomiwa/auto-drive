@@ -144,7 +144,7 @@
     </v-card-subtitle>
      <v-card-text class="text--primary">
 
-      <div>Price: <b class=" priceTag">$ {{cars.price}}</b></div>
+      <div>Price: <b class=" priceTag" >$ {{Number(cars.price).toLocaleString()}}</b></div>
     </v-card-text>
     <div class="year">Year: {{cars.year}}</div>
     
@@ -199,9 +199,10 @@ import { mapState } from 'vuex'
              }
 
     },
+      
     data(){
         return{
-        // cart:[]
+        
         }
     },
     

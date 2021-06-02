@@ -56,7 +56,7 @@
      
       <div class="price">
        <div class="text--primary">
-        Price: ${{cars.price}}
+        Price: <b>$ {{Number(cars.price).toLocaleString()}}</b>
       </div>
 
      <div class="text--primary quantity" >
@@ -180,7 +180,7 @@ export default{
  }
   },
 
-    
+  
 
      methods: {
         add(cars) {
