@@ -6,6 +6,7 @@ import Cart from '../components/Cart.vue'
 import Account from '../components/Account.vue'
 import Contact from '../components/Contact.vue'
 import Signup from '../components/Signup.vue'
+import Checkout from '../components/Checkout.vue'
 
 
 
@@ -54,7 +55,11 @@ const routes = [
     name: 'Signup',
     component: Signup
   },
-
+  {
+    path:'/Checkout',
+    name: 'Checkout',
+    component: Checkout
+  },
   
   
 ]

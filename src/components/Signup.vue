@@ -20,6 +20,11 @@
         v-model="name"
           label="Username"
         ></v-text-field>
+         <v-text-field
+          v-model="phoneNumber"
+          label="Phone Number"
+         
+        ></v-text-field>
 
            <validation-provider
         v-slot="{ errors }"
@@ -49,20 +54,6 @@
           
         ></v-text-field>
       </validation-provider>
-
-       <validation-provider
-        v-slot="{ errors }"
-        name="password"
-       
-        
-      >
-        <v-text-field
-          v-model="password"
-          :error-messages="errors"
-          label="Confirm Password"
-          
-        ></v-text-field>
-      </validation-provider>
      
 
      
@@ -73,6 +64,7 @@
         
         :disabled="invalid"
         @click="clear"
+        v-on:click="register"
       >
         Signup
       </v-btn>
@@ -102,7 +94,9 @@
 <script>
   import { required, digits, email, max, regex } from 'vee-validate/dist/rules'
   import { extend, ValidationObserver, ValidationProvider, setInteractionMode } from 'vee-validate'
-
+  import firebase from "firebase/app";
+ 
+ // const firebase = require('../firebaseConfig.js');
   setInteractionMode('eager')
 
   extend('digits', {
@@ -140,12 +134,24 @@
       phoneNumber: '',
       email: '',
       password: '',
-      confirmPassword:""
+    
      
       
     }),
 
     methods: {
+      register: function(e){
+        firebase.auth().createUserWithEmailAndPassword(this.name, this.phoneNumber, this.email, this.password)
+        .then(user => {
+          alert(`Account Created for ${user.name}`);
+          this.$router.push("/");
+        }, 
+        err =>{
+          alert(err.message);
+        })
+        e.preventDefault();
+        
+      },
       submit () {
         this.$refs.observer.validate()
       },

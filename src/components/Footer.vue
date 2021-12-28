@@ -35,6 +35,7 @@ export default {
 <style>
 .footer{
     height: 70px;
+    
 }
 li a { 
     text-decoration: none;

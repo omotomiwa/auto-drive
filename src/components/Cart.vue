@@ -87,8 +87,12 @@ arrow_forward_ios
 
    <v-container>
    <div class="wrapper">
-    <v-btn v-show="cart.length != 0 " depressed class="checkout" color="orange">Checkout</v-btn>
+     <router-link to="/Checkout" style="text-decoration: none;">
+      <v-btn v-show="cart.length != 0 " depressed class="checkout" color="orange">Checkout</v-btn>
+
+     </router-link>
    
+
    </div>
     
   </v-container>
@@ -108,7 +112,7 @@ arrow_forward_ios
 
 
 </template>
-<style>
+<style >
 .cart{
   margin-left: 100px;
 }

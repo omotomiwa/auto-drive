@@ -11,11 +11,12 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-text-field
+       v-model="searchTerm" 
         class="hidden-sm-and-down"
         width="50"
         label="Search Gallery..."
       ></v-text-field>
-      <v-btn plain right class="hidden-sm-and-down">search</v-btn>
+    
 
       <router-link to="/Login" style="color: grey; text-decoration: none;" class="mx-2">
               <v-icon right size="26"  class="material-icons-round">person</v-icon> <span class="hidden-sm-and-down">LOGIN</span>
@@ -91,8 +92,19 @@ export default {
    computed: {
       ...mapState([
         "links",
-        "cart"
+        "cart",
+        "gallery"
+
       ]),
+       filteredcars() {
+      let filteredCars = this.gallery.filter((car) => {
+        return car.Name.toLowerCase().includes(this.searchTerm.toLowerCase());
+      })
+      let orderedPrice = filteredCars.sort((a, b) => {
+        return b.price - a.price;
+      })
+      return orderedPrice;
+    }
      
   },
   methods:{
@@ -102,11 +114,9 @@ export default {
   data() {
     return {
       drawer: false,
-      // links: [
-      //   { icon: "home", text: "Home", route: "/" },
-      //   { icon: "account_box", text: "Account", route: "/Account" },
-      //   { icon: "person", text: "Login", route: "/Login" },
-      // ],
+        onOff: true,
+         searchTerm: ''
+      
     };
   },
 };

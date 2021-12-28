@@ -6,6 +6,7 @@
          class="hidden-md-and-up"
           width="50"
           label="Search Gallery..."
+          v-model="keyword"
           >
           </v-text-field>
           <span><v-btn plain 
@@ -93,7 +94,7 @@
                 <v-card 
     class="mx-10 hidden-md-and-down"
     width="300"
-    height= "350">
+    height= "355">
     <v-card-text >
       <h3 class="lg--text text--primary mx-10">
         YOUR N0.1 AUTO SHOP<br><br>
@@ -125,7 +126,7 @@
       <v-card
     
 
-    class="mx-8 my-10"
+    class="mx-8 my-8"
     max-width="370"
    
    
@@ -138,15 +139,14 @@
     >
       
     </v-img>
-    <v-card-title >{{cars.Name}}</v-card-title>
-      <v-card-subtitle class="pb-0 model">
-      Model:{{cars.model}}
-    </v-card-subtitle>
-     <v-card-text class="text--primary">
+    <v-card-title  >{{cars.Name}}</v-card-title>
+      <v-card-title class="pt-0 carDetails">
+      Model: {{cars.model}}. ({{cars.year}})
+    </v-card-title>
+     <v-card-title class="text--primary pt-1 carDetails">
 
       <div>Price: <b class=" priceTag" >$ {{Number(cars.price).toLocaleString()}}</b></div>
-    </v-card-text>
-    <div class="year">Year: {{cars.year}}</div>
+    </v-card-title>
     
     
     
@@ -190,6 +190,9 @@ import { mapState } from 'vuex'
             "items",
             "cart"
         ]),
+         filteredList() {
+      return this.gallery.filter( cars => cars.Name.toLowerCase().includes(this.keyword))
+    }
        
     },
     methods:{
@@ -202,7 +205,8 @@ import { mapState } from 'vuex'
       
     data(){
         return{
-        
+          onOff: true,
+        keyword: '',
         }
     },
     
@@ -225,8 +229,8 @@ import { mapState } from 'vuex'
     position: relative;
     top: 50px;
   }
- .model{
-   float: left;
+ .carDetails{
+   font-size: 15px;
  }
  .year{
    position: relative;

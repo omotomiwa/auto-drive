@@ -29,5 +29,8 @@ export default {
 };
 </script>
 <style>
+body{
+  font-family: Helvetica, Arial, sans-serif;
+}
 a { text-decoration: none; };
 </style>
