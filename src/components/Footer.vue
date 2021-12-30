@@ -1,43 +1,42 @@
 <template>
-<v-container>
+  <v-container>
     <v-footer absolute dark padless class="footer ">
-        <v-container class="text-center ">
-            <v-layout row wrap>
-                <v-flex><b>Developer:</b> {{username}}</v-flex>
-                <router-link to="/Contact" class="contact" style="text-decoration: none; color:white">
-                    <v-flex class="contact">Contact</v-flex>
-                </router-link>
-                <v-flex>© 2021</v-flex>
-            </v-layout>
-        </v-container>
-            
+      <v-container class="text-center ">
+        <v-layout row wrap>
+          <v-flex><b>Developer:</b> {{ username }}</v-flex>
+          <router-link
+            to="/Contact"
+            class="contact"
+            style="text-decoration: none; color:white"
+          >
+            <v-flex class="contact">Contact</v-flex>
+          </router-link>
+          <v-flex>© 2021</v-flex>
+        </v-layout>
+      </v-container>
     </v-footer>
-</v-container>
-
+  </v-container>
 </template>
 <script>
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
 export default {
-  name: 'Footer',
+  name: "Footer",
   computed: {
-    ...mapState(["username"])
+    ...mapState(["username"]),
   },
   data() {
     return {
-      message: ""
-    }
+      message: "",
+    };
   },
-  methods: {
-    
-  }
-}
+  methods: {},
+};
 </script>
 <style>
-.footer{
-    height: 70px;
-    
+.footer {
+  height: 70px;
 }
-li a { 
-    text-decoration: none;
+li a {
+  text-decoration: none;
 }
 </style>
